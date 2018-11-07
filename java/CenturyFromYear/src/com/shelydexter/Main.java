@@ -9,7 +9,7 @@ Example:
 - For `year = 1905`, the output should be `centuryFromYear(year) = 20`;
 - For `year = 1700`, the output should be `centuryFromYear(year) = 17`.
 
-Input/Output
+Input/Output:
 - [execution time limit] 3 seconds (java)
 - [input] integer year
     A positive integer, designating the year.
@@ -33,10 +33,12 @@ public class Main {
         test(8, 1, true);
     }
 
+    // My answer
     private static int centuryFromYears(int year) {
         return ((year - 1) / 100) + 1;
     }
 
+    // Test method
     private static boolean test(int year, int expected, boolean verbose) {
         if (verbose) {
             System.out.println("Input: year = " + year +
