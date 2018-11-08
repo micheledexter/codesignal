@@ -7,7 +7,7 @@ Example:
 For `param1 = 1` and `param2 = 2`, the output should be
 `add(param1, param2) = 3`.
 
-Input/Output
+Input/Output:
 - [execution time limit] 3 seconds (java)
 - [input] integer param1
     Guaranteed constraints:
