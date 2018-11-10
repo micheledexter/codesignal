@@ -25,6 +25,7 @@ Input/Output:
 - [output] boolean
     - Return `true` if it is possible to remove one element from the array in
     order to get a strictly increasing sequence, otherwise return `false`
+NOTE: currently taking over 3 seconds for test 17 on the website, make sure to check why this is a problem.
  */
 
 import java.util.Arrays;
