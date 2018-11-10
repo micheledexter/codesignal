@@ -27,7 +27,9 @@ Input/Output:
     order to get a strictly increasing sequence, otherwise return `false`
  */
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class AlmostIncreasingSequence {
 
@@ -52,25 +54,23 @@ public class AlmostIncreasingSequence {
     }
 
     // My answer
-    public static boolean almostIncreasingSequence(int[] sequence) {
-        int ticker = sequence[0];
-        int memory = sequence[0];
-        boolean doubleCheck = false;
-        for (int i = 1; i < sequence.length; i++) {
-            if (ticker < sequence[i]) {
-                ticker = sequence[i];
-                continue;
+    private static boolean almostIncreasingSequence(int[] sequence) {
+        for (int i = 0; i < sequence.length; i++) {
+            List<Integer> modified = new ArrayList<>();
+            for (int j = 0; j < sequence.length; j++) {
+                if (i != j) modified.add(sequence[j]);
             }
-            if (doubleCheck || sequence[i] == memory) return false;
-            doubleCheck = true;
-            memory = sequence[i];
-            ticker = sequence[i];
+            boolean check = true;
+            for (int j = 0; j < modified.size()-1; j++) {
+                if (modified.get(j) >= modified.get(j+1)) check = false;
+            }
+            if (check) return true;
         }
-        return true;
+        return false;
     }
 
     // Test method
-    public static boolean test(int[] sequence, boolean expected, boolean verbose) {
+    private static boolean test(int[] sequence, boolean expected, boolean verbose) {
         if (verbose) {
             System.out.println("Input: sequence = " + Arrays.toString(sequence) +
                     "\nOutput: " + almostIncreasingSequence(sequence) +
