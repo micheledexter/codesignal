@@ -55,18 +55,23 @@ public class AlmostIncreasingSequence {
 
     // My answer
     private static boolean almostIncreasingSequence(int[] sequence) {
-        for (int i = 0; i < sequence.length; i++) {
-            List<Integer> modified = new ArrayList<>();
-            for (int j = 0; j < sequence.length; j++) {
-                if (i != j) modified.add(sequence[j]);
+        for (int i = 0; i < sequence.length-1; i++) {
+            if (sequence[i] >= sequence[i+1]) {
+                if (i+1 == sequence.length-1) {
+                    break;
+                }
+                if (i-1 >= 0 && i+1 < sequence.length-1) {
+                    if (sequence[i-1] >= sequence[i+1] && sequence[i] >= sequence[i+2]) {
+                        return false;
+                    }
+                }
+                for (int j = i+1; j < sequence.length-1; j++) {
+                    if (sequence[j] >= sequence[j+1]) return false;
+                }
+                break;
             }
-            boolean check = true;
-            for (int j = 0; j < modified.size()-1; j++) {
-                if (modified.get(j) >= modified.get(j+1)) check = false;
-            }
-            if (check) return true;
         }
-        return false;
+        return true;
     }
 
     // Test method
