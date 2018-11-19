@@ -40,7 +40,7 @@ public class ShapeArea {
     }
 
     // My answer
-    public static int shapeArea(int n) {
+    private static int shapeArea(int n) {
         int total = 0;
         for (int i = 0; i < n; i++) {
             total += i * 4;
@@ -49,7 +49,7 @@ public class ShapeArea {
     }
 
     // Test method
-    public static boolean test(int n, int expected, boolean verbose) {
+    private static boolean test(int n, int expected, boolean verbose) {
         if (verbose) {
             System.out.println("Input: n = " + n +
                     "\nOutput: " + shapeArea(n) +
