@@ -37,7 +37,7 @@ public class CheckPalindrome {
     }
 
     // My answer
-    public static boolean checkPalindrome(String inputString) {
+    private static boolean checkPalindrome(String inputString) {
         String[] stringArray = inputString.toLowerCase().split("\\s*[^A-Za-z0-9]\\s*");
         String forwards = String.join("", stringArray);
         String backwards = new StringBuilder(forwards).reverse().toString();
@@ -48,7 +48,7 @@ public class CheckPalindrome {
     }
 
     // Test method
-    public static boolean test(String inputString, boolean expected, boolean verbose) {
+    private static boolean test(String inputString, boolean expected, boolean verbose) {
         if (verbose) {
             System.out.println("Input: inputString = " + inputString +
                     "\nOutput: " + checkPalindrome(inputString) +
