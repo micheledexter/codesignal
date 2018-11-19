@@ -39,7 +39,7 @@ public class MakeArrayConsecutive2 {
     }
 
     // My answer
-    public static int makeArrayConsecutive2(int[] statues) {
+    private static int makeArrayConsecutive2(int[] statues) {
         if (statues.length < 2) return 0;
         int highest = statues[0];
         int lowest = statues[0];
@@ -51,7 +51,7 @@ public class MakeArrayConsecutive2 {
     }
 
     // Test method
-    public static boolean test(int[] statues, int expected, boolean verbose) {
+    private static boolean test(int[] statues, int expected, boolean verbose) {
         if (verbose) {
             System.out.println("Input: statues = " + Arrays.toString(statues) +
                     "\nOutput: " + makeArrayConsecutive2(statues) +
