@@ -32,7 +32,7 @@ public class AllLongestStrings {
     }
 
     // My answer
-    public static String[] allLongestStrings(String[] inputArray) {
+    private static String[] allLongestStrings(String[] inputArray) {
         int length = 0;
         for (String item: inputArray) {
             if (item.length() > length) {
@@ -57,7 +57,7 @@ public class AllLongestStrings {
     }
 
     // Test method
-    public static boolean test(String[] inputArray, String[] expected, boolean verbose) {
+    private static boolean test(String[] inputArray, String[] expected, boolean verbose) {
         if (verbose) {
             System.out.println("Input: inputArray = " + Arrays.toString(inputArray) +
                     "\nOutput: " + Arrays.toString(allLongestStrings(inputArray)) +
@@ -72,7 +72,7 @@ public class AllLongestStrings {
         return false;
     }
 
-    public static boolean stringArraysAreEqual(String[] first, String[] second) {
+    private static boolean stringArraysAreEqual(String[] first, String[] second) {
         if (first.length != second.length) return false;
         for (int i = 0; i < first.length; i++) {
             if (first[i] != second[i]) return false;
