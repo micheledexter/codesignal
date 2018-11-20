@@ -30,10 +30,11 @@ public class SortByHeight {
         test(new int[] {-1, -1, -1, -1, -1}, new int[] {-1, -1, -1, -1, -1}, true);
         test(new int[] {-1}, new int[] {-1}, true);
         test(new int[] {4, 2, 9, 11, 2, 16}, new int[] {2, 2, 4, 9, 11, 16}, true);
+        test(new int[] {2, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 1}, new int[] {1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 2}, true);
     }
 
     private static int[] sortByHeight(int[] a) {
-
+        return new int[] {-1};
     }
 
     private static boolean test(int[] a, int[] expected, boolean verbose) {
@@ -43,11 +44,19 @@ public class SortByHeight {
                     "\nExpected: " + Arrays.toString(expected));
             System.out.print("Result: ");
         }
-        if (sortByHeight(a) == expected) {
+        if (arraysAreEqual(sortByHeight(a), expected)) {
             if (verbose) System.out.println("SUCCESSFUL\n");
             return true;
         }
         if (verbose) System.out.println("!--- FAILED ---!\n");
         return false;
+    }
+
+    private static boolean arraysAreEqual(int[] first, int[] second) {
+        if (first.length != second.length) return false;
+        for (int i = 0; i < first.length; i++) {
+            if (first[i] != second[i]) return false;
+        }
+        return true;
     }
 }
