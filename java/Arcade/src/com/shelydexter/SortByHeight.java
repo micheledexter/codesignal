@@ -34,7 +34,21 @@ public class SortByHeight {
     }
 
     private static int[] sortByHeight(int[] a) {
-        return new int[] {-1};
+        if (a.length <= 1) return a;
+        int sticky = 0;
+        for (int i = 1; i < a.length; i++) {
+            if (a[i] == -1) continue;
+            for (int j = i; j < a.length; j++) {
+                if (a[j] == -1) continue;
+                if (a[j] < a[sticky]) {
+                    int temp = a[j];
+                    a[j] = a[sticky];
+                    a[sticky] = temp;
+                }
+            }
+            sticky = i;
+        }
+        return a;
     }
 
     private static boolean test(int[] a, int[] expected, boolean verbose) {
