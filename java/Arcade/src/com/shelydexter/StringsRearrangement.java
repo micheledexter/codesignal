@@ -39,7 +39,6 @@ public class StringsRearrangement {
         test(new String[] {"f", "g", "a", "h"}, true);
         test(new String[] {"ff", "gf", "af", "ar", "hf"}, true);
         test(new String[] {"a", "b", "c"}, true);
-        test(new String[] {"abc", "xbc", "xxc", "xbc", "aby", "ayy", "aby"}, true);
     }
 
     // My answer
@@ -61,12 +60,6 @@ public class StringsRearrangement {
                             System.out.println("HEAD " + inputArray[j]);
                             found = true;
                         }
-//                        if (tail.matches(new String(working)) && !inputArray[j].equals(tail) && !found) {
-//                            tail = inputArray[j];
-//                            length++;
-//                            System.out.println("TAIL " + inputArray[j]);
-//                            found = true;
-//                        }
                     }
                     for (int k = inputArray[j].length()-1; k >= 0; k--) {
                         char[] working = inputArray[j].toCharArray();
