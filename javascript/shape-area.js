@@ -20,7 +20,7 @@ Example:
 - For `n = 3`, the output should be `shapeArea(n) = 13`.
 
 Input/Output:
-- [execution time limit] 3 seconds (java)
+- [execution time limit] 4 seconds (js)
 - [input] integer n
     Guaranteed constraints:
     `1 ≤ n < 10^4`.
