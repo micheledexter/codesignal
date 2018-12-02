@@ -10,7 +10,7 @@ Example:
 `checkPalindrome(inputString) = true`.
 
 Input/Output:
-- [execution time limit] 3 seconds (java)
+- [execution time limit] 4 seconds (js)
 - [input] string inputString
     A non-empty string consisting of lowercase characters.
     Guaranteed constraints:
